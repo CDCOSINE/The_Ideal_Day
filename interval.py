@@ -5,6 +5,7 @@ class interval:
 
         # starttime , endtime are time objects from mytime
         # print accordingly
+        #print('gval ',starttime,':',endtime)
         self.start_time = starttime
         self.end_time = endtime
 
@@ -17,8 +18,8 @@ class interval:
 
     def is_intersection(self,interval2):
         # interval is object of interval class only
-        if self.end_time == interval2.start_time:
+        if str(self.end_time) == str(interval2.start_time):
             return True,self,interval2
-        elif self.start_time == interval2.end_time:
+        elif str(self.start_time) == str(interval2.end_time):
             return True,interval2,self
-        return False,None
+        return False,self

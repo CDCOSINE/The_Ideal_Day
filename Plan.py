@@ -23,3 +23,9 @@ class Plan:
             return -1
         self.week_plan[day].intervals[interval1] = task
         return 0
+
+    def __str__(self):
+        plan_str = ""
+        for day in self.week_plan.keys():
+            plan_str += '-'*10 + ' ' + day + ' '+ '-'*10 + '\n' + str(self.week_plan[day])
+        return plan_str

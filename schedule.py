@@ -24,14 +24,16 @@ class schedule:
 
         while intervals_formed < total_intervals:
             
+            #print(str(start_time)+' ---- '+str(end_time)+' ---- ')
             current_interval = interval.interval(start_time,end_time,size_of_interval)
 
-            self.intervals[current_interval] = task.task("task 1")
+            self.intervals[current_interval] = task.task("task 1",0)
 
             intervals_formed += 1
 
             start_time = mytime.time(end_time.hour,end_time.minutes)
-            end_time.add_x_hour(15)
+            end_time = mytime.time(end_time.hour,end_time.minutes)
+            end_time = end_time.add_x_min(15)
         
     def check_interval(self,interval1):
         if interval1 not in self.intervals.keys():
@@ -51,7 +53,14 @@ class schedule:
             ## + Operator overriden to add objects of custom task class
             self.intervals[prior] = self.intervals[prior] + self.intervals[later]
             prior.end_time = later.end_time
+            prior.time_diff = prior.time_diff + later.time_diff
             del self.intervals[later]
             return 0
         
         return -1
+
+    def __str__(self):
+        schedule_str = ""
+        for intervl in  self.intervals.keys():
+            schedule_str += (str(intervl) + ' -> ' + str(self.intervals[intervl])) + '\n'
+        return schedule_str

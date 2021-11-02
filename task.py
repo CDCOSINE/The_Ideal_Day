@@ -1,6 +1,6 @@
 class task:
-    def __init__(self,name,r_time = 1000,avg_time = 200, inf_cap_time = 75):
-        self.score = 0
+    def __init__(self,name,sc,r_time = 1000,avg_time = 200, inf_cap_time = 75):
+        self.score = sc
         self.title = name
 
         #ll times in minutes
@@ -11,7 +11,7 @@ class task:
     def __add__(self,task2):
         
         self.score += task2.score
-        self.title += '+ '+task2.title
+        self.title += ' + '+task2.title
 
         self.relaxed_time += task2.relaxed_time
         
@@ -21,6 +21,8 @@ class task:
 
         return self
 
+    def __str__(self):
+        return self.title+' -> '+str(self.score)
 """     self.relaxed_time = 480
         self.average_time = 120
         self.inf_capability = 45
