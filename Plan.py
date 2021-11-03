@@ -1,5 +1,8 @@
 import schedule
 
+fail = -1
+success = 0
+
 class Plan:
     def __init__(self):
         self.week_plan = {}
@@ -19,10 +22,10 @@ class Plan:
         return self.week_plan[day].merge_interval(interval1,interval2)
     
     def modify_interval(self,day,interval1,task):
-        if self.check_interval(self,day,interval1) !=  0:
-            return -1
+        if self.check_interval(self,day,interval1) !=  success:
+            return fail
         self.week_plan[day].intervals[interval1] = task
-        return 0
+        return success
 
     def __str__(self):
         plan_str = ""

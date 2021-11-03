@@ -1,6 +1,10 @@
 import mytime
 import interval
 import task
+from random import randrange
+
+success = 0
+fail = -1
 
 class schedule:
 
@@ -24,10 +28,9 @@ class schedule:
 
         while intervals_formed < total_intervals:
             
-            #print(str(start_time)+' ---- '+str(end_time)+' ---- ')
             current_interval = interval.interval(start_time,end_time,size_of_interval)
 
-            self.intervals[current_interval] = task.task("task 1",0)
+            self.intervals[current_interval] = task.task("task "+str(randrange(10)),randrange(10))
 
             intervals_formed += 1
 
@@ -37,27 +40,27 @@ class schedule:
         
     def check_interval(self,interval1):
         if interval1 not in self.intervals.keys():
-            return -1
-        return 0
+            return fail
+        return success
 
     def merge_intervals(self,interval1,interval2):
 
-        if self.check_interval(interval1)!=0 or self.check_interval(interval2)!=0 :
-            return -1
+        if self.check_interval(interval1)!=success or self.check_interval(interval2)!=success :
+            return fail
         
         ##check intersection of intervals
         [is_intersect,prior,later] = interval1.is_intersection(interval2)
         
         if is_intersect:
 
-            ## + Operator overriden to add objects of custom task class
+            ## + Operator overloaded to add objects of custom task class
             self.intervals[prior] = self.intervals[prior] + self.intervals[later]
             prior.end_time = later.end_time
             prior.time_diff = prior.time_diff + later.time_diff
             del self.intervals[later]
-            return 0
+            return success
         
-        return -1
+        return fail
 
     def __str__(self):
         schedule_str = ""
