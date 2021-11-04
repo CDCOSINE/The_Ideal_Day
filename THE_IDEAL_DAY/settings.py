@@ -55,7 +55,7 @@ ROOT_URLCONF = 'THE_IDEAL_DAY.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['D:/The_Ideal_Day/THE_IDEAL_DAY/idealday/'],
+        'DIRS': ['D:\\The_Ideal_Day\\idealday\\'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

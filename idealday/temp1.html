@@ -1,1 +1,80 @@
-<h1>hyhbyubuhhuhn</h1>
+{% load static %}
+
+
+
+<h1>The Ideal Day </h1>
+
+
+
+
+
+
+
+
+
+<h3> Monday  </h3>
+
+
+<table>
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+
+
+
+  
+
+{% for array in Mon %}
+<tr>
+      {% for content in array %}
+        <td>{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+<h3> Tuesday  </h3>
+<p> {{Tue}} </p>
+
+
+<h3> Wednessday  </h3>
+<p> {{Wed}} </p>
+
+<h3> Thursday  </h3>
+<p> {{Thurs}} </p>
+
+<h3> Friday  </h3>
+<p> {{Fri}} </p>
+
+<h3> Saturday  </h3>
+<table>
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+
+
+
+  
+
+{% for array in Sat %}
+<tr>
+      {% for content in array %}
+        <td>{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<h3> Sunday  </h3>
+<p> {{Sun}} </p>
