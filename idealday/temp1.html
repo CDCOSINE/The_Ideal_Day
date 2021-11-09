@@ -1,4 +1,3 @@
-{% load static %}
 
 
 
@@ -12,69 +11,205 @@
 
 
 
-<h3> Monday  </h3>
+<h3  style="text-align: center;"> Monday  </h3>
 
 
-<table>
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
     <tr>
       <th>Start Time</th>
       <th>End Time</th>
-      <th>Bandwidth</th>
+      <th>Bandwidth(Minutes)</th>
       <th>Task Name</th>
       <th>Score</th>
       <th>Status</th>
     </tr>
-
-
-
-
-  
 
 {% for array in Mon %}
 <tr>
       {% for content in array %}
-        <td>{{content}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
       {% endfor %}
 </tr>
 {% endfor %}
 </table>
-<h3> Tuesday  </h3>
-<p> {{Tue}} </p>
+
+<p> Monday Score: {{Mon_Sc}}</p>
 
 
-<h3> Wednessday  </h3>
-<p> {{Wed}} </p>
 
-<h3> Thursday  </h3>
-<p> {{Thurs}} </p>
 
-<h3> Friday  </h3>
-<p> {{Fri}} </p>
 
-<h3> Saturday  </h3>
-<table>
+<h3  style="text-align: center;"> Tuesday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
     <tr>
       <th>Start Time</th>
       <th>End Time</th>
-      <th>Bandwidth</th>
+      <th>Bandwidth(Minutes)</th>
       <th>Task Name</th>
       <th>Score</th>
       <th>Status</th>
     </tr>
 
-
-
-
-  
-
-{% for array in Sat %}
+{% for array in Tue %}
 <tr>
       {% for content in array %}
-        <td>{{content}}</td>
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
       {% endfor %}
 </tr>
 {% endfor %}
 </table>
 
-<h3> Sunday  </h3>
-<p> {{Sun}} </p>
+<p> Tuesday Score: {{Tue_Sc}}</p>
+
+
+
+
+<h3  style="text-align: center;"> Wednessday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+{% for array in Wed %}
+<tr>
+      {% for content in array %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<p> Wednessday Score: {{Wed_Sc}}</p>
+
+
+
+
+
+
+
+
+<h3  style="text-align: center;"> Thursday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+{% for array in Thurs %}
+<tr>
+      {% for content in array %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<p> Thursday Score: {{Thurs_Sc}}</p>
+
+
+
+
+
+
+
+<h3  style="text-align: center;"> Friday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+{% for array in Fri %}
+<tr>
+      {% for content in array %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<p> Friday Score: {{Fri_Sc}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h3  style="text-align: center;"> Saturday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+{% for array in Sat %}
+<tr>
+      {% for content in array %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<p> Saturday Score: {{Sat_Sc}}</p>
+
+
+
+
+
+<h3  style="text-align: center;"> Sunday  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+
+{% for array in Sun %}
+<tr>
+      {% for content in array %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+      {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+<p> Sunday Score: {{Sun_Sc}}</p>

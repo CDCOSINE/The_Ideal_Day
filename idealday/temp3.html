@@ -1,0 +1,50 @@
+
+
+
+<h1>The Ideal Day </h1>
+
+<p> You can come here daily and update the tasks only for today, once you complete them</p>
+
+<p> You can re-priortize task only on sunday, based on your last week's score</p>
+
+
+
+
+
+<h3  style="text-align: center;"> {{Today}}  </h3>
+
+
+<table  style="margin-left: auto; margin-right: auto;width:100%"  >
+    <tr>
+      <th>Start Time</th>
+      <th>End Time</th>
+      <th>Bandwidth(Minutes)</th>
+      <th>Task Name</th>
+      <th>Score</th>
+      <th>Status</th>
+    </tr>
+<form action='/today/' method="post">{% csrf_token %}
+{% for array in Today_Data %}
+{% with outer_counter=forloop.counter0 %}
+<tr>
+      {% for content in array %}
+        
+        {% if forloop.counter == 6 %}
+        {% if content == False %}
+        <td style="text-align: center; vertical-align: middle;"><input type="checkbox" name="name1" value={{outer_counter}} />&#10007</td>
+        {% else %}
+        <td style="text-align: center; vertical-align: middle;">&#10003</td>
+        {% endif %}
+        {% else %}
+        <td style="text-align: center; vertical-align: middle;">{{content}}</td>
+        {% endif %}
+      {% endfor %}
+</tr>
+{% endwith %}
+{% endfor %}
+</table>
+<input type="submit" value="Submit">
+</form>
+
+
+

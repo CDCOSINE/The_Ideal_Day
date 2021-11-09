@@ -7,13 +7,13 @@ from datetime import datetime
 week_list = ['Mon','Tue','Wed','Thurs','Fri','Sat','Sun']
 
 class WeekDay(models.IntegerChoices):
-    Mon = 0,
-    Tues = 1,
-    Wed = 2,
-    Thurs = 3,
-    Fri = 4,
-    Sat = 5,
-    Sun = 6
+    Mon = 0,'Mon'
+    Tue = 1,'Tue'
+    Wed = 2,'Wed'
+    Thurs = 3,'Thurs'
+    Fri = 4,'Fri'
+    Sat = 5,'Sat'
+    Sun = 6,'Sun'
 
 class Week_Plan(models.Model):
     id = models.IntegerField(default=WeekDay.Mon, choices=WeekDay.choices,primary_key=True)
@@ -34,6 +34,7 @@ class Interval(models.Model):
     score = models.IntegerField()
     
     status = models.BooleanField()
+
 
     def __str__(self):
 

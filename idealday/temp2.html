@@ -1,0 +1,35 @@
+<h1>The Ideal Day </h1>
+
+
+
+<p> Add a task to your week's schedule. The task will be added to all days of week</p>
+
+
+<form action='/view_plan/' method="post" ><br>{% csrf_token %}
+
+<p >
+<label for="start_time">Enter start time in 24 hour format e.g. (5:20 am as 0520 and 9:45pm as 0945) </label><br>
+  <input type="text" id="start_time" name="start_time"><br>
+</p><br>
+
+<p>
+<label for="end_time">Enter end time in 24 hour format e.g. (5:20 am as 0520 and 9:45pm as 0945) </label><br>
+  <input type="text" id="end_time" name="end_time"><br>
+</p><br>
+
+
+<p>
+  <label for="task">Enter name of the task scheduled</label><br>
+    <input type="text" id="task" name="task"><br>
+  </p><br>
+
+  <p>
+    <label for="Score">
+      Enter the score you will recieve after completing the task<br>
+      <input type="number" id="Score" name="Score" min="0"><br>
+    </label>
+  </p><br>
+  <input type="submit" value="Submit">
+
+</form>
+
