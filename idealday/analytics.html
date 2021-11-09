@@ -1,0 +1,175 @@
+<h1>The Ideal Day </h1>
+
+<p> Analytics Page</p>
+
+<p> Below is the current schedule in priority order(Max Score)</p>
+
+
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Score
+    </th>
+  </tr>
+
+{% for task in task_list %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+<p> Below is the table for all tasks based on number of times you completed it in a week i.e. out of 7 </p>
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Frequency
+    </th>
+  </tr>
+
+{% for task in freq %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+<p> Below is the table for all tasks completed 7 out of 7 times </p>
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Frequency
+    </th>
+  </tr>
+
+{% for task in comp_7 %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+
+
+
+<p> Below is the table for all tasks completed 0 out of 7 times </p>
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Frequency
+    </th>
+  </tr>
+
+{% for task in comp_0 %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+
+<p> Below is the table for all tasks completed maximum number of times</p>
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Frequency
+    </th>
+  </tr>
+
+{% for task in comp_mx %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+<p> Below is the table for all tasks completed minimum number of times </p>
+<table>
+
+  <tr>
+
+    <th>
+      Task Name
+    </th>
+    <th>
+      Frequency
+    </th>
+  </tr>
+
+{% for task in comp_mn %}
+
+<tr>
+
+  {% for property in task %}
+  <td style="text-align: center"> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+
+</table>

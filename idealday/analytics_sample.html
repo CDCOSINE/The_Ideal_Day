@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+  
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+</style>
+</head>
+<body>
+    <h1>The Ideal Day </h1>
+
+<div class="row">
+  <div class="column">
+    <h4>All tasks in decreasing Priority order</h4>
+    <table>
+      <tr>
+        <th>Task (Decreasing Priority)</th>
+        <th>Score</th>
+      </tr>
+      {% for task in task_list %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+
+
+  <div class="column">
+    <h4>Task completed frequent first order</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Frequency</th>
+      </tr>
+      {% for task in freq %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+</div>
+
+
+<p>
+
+</p>
+<p>
+
+</p>
+
+<div class="row">
+  <div class="column">
+    <h4>Task completed 7 out of 7 days</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Score</th>
+      </tr>
+      {% for task in comp_7 %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+
+
+  <div class="column">
+    <h4>Task completed 0 out of 7 days</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Frequency</th>
+      </tr>
+      {% for task in comp_0 %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+</div>
+
+<p>
+
+</p>
+
+<p>
+
+
+</p>
+
+<div class="row">
+  <div class="column">
+    <h4>Task completed maximum number of times</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Score</th>
+      </tr>
+      {% for task in comp_mx %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+
+
+  <div class="column">
+    <h4>Task completed minimum number of times</h4>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Frequency</th>
+      </tr>
+      {% for task in comp_mn %}
+
+<tr>
+
+  {% for property in task %}
+  <td> {{property}} </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+    </table>
+  </div>
+</div>
+
+
+<h4> Strategize priority for next week</h4>
+<p>
+  Strategization includes following operations:<br><br>
+  In general task which you tend to complete most of times goes down in priority, task which you find harder to complete will become more important.<br><br>
+
+  1. Tasks completed 7 times will be assigned minimum priority<br><br>
+  
+  2. Tasks completed 0 times will be assigned maximum priority<br><br>
+  
+  3. Priority of Tasks completed less than 3 times (more than 0) will be doubled i.e. priority[task] = 2*priroty[task]<br><br>
+  
+  4. Priority of Tasks completed more than 3 times (less than 7) will be doubled i.e. priority[task] = priroty[task]/2<br><br>
+  
+  Note: Strategy button is only available on Sunday after 7pm after showing previous week's score.<br><br>
+  <form action = "/analytics/" method = "POST">{% csrf_token %}
+    <button type="submit" value="Submit">Strategize</button>
+  </form>
+</p>
+
+
+<h4> Delete Schedule</h4>
+<p>
+  Carefull !! This will delete whole DATABASE<br><br>
+  <form action = "/add_intrvl/" method = "post">{% csrf_token %}
+    <button type="submit" value="Submit">Delete</button>
+  </form>
+</p>
+</body>
+</html>

@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from django.conf.urls import url
-from idealday.api import view_plan, add_intrvl, today
+from idealday.api import analytics, view_plan, add_intrvl, today
 urlpatterns = [
     path('idealday/', include('idealday.urls')),
     path('admin/', admin.site.urls),
     url('view_plan/',view_plan.as_view(),name='view'),
     url('add_intrvl/',add_intrvl.as_view(),name='add'),
-    url('today/',today.as_view(),name='today')
+    url('today/',today.as_view(),name='today'),
+    url('analytics',analytics.as_view(),name='analytics')
 ]

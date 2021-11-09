@@ -1,0 +1,51 @@
+<h1>The Ideal Day </h1>
+
+<div>
+
+<form action = "/view_plan/" method = "get">{% csrf_token %}
+<button style="float: left" type="submit" value="Submit">View Plan</button></form>
+
+
+<form action = "/today/" method = "get">{% csrf_token %}
+<button style="float: left" type="submit" value="Submit">Today's Task</button></form>
+  
+
+
+<form action = "/analytics/" method = "get">{% csrf_token %}
+<button style="float: left" type="submit" value="Submit">Analytics</button></form><br>
+
+</div>
+
+<h4> Add a task to your week's schedule. The task will be added to all days of week</h4>
+
+<form action='/view_plan/' method="post" ><br>{% csrf_token %}
+
+<p >
+<label for="start_time">Enter start time in 24 hour format e.g. (5:20 am as 0520 and 9:45pm as 0945) </label>
+  <input type="text" id="start_time" name="start_time"><br>
+</p><br>
+
+<p>
+<label for="end_time">Enter end time in 24 hour format e.g. (5:20 am as 0520 and 9:45pm as 0945) </label>
+  <input type="text" id="end_time" name="end_time"><br>
+</p><br>
+
+
+<p>
+  <label for="task">Enter name of the task scheduled</label>
+    <input type="text" id="task" name="task"><br>
+  </p><br>
+
+  <p>
+    <label for="Score">
+      Enter the score you will recieve after completing the task
+      <input type="number" id="Score" name="Score" min="0">
+    </label>
+  </p><br>
+  <input type="submit" value="Submit">
+
+</form>
+
+
+
+
